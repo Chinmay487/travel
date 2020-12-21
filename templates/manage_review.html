@@ -1,0 +1,37 @@
+{% extends 'base2.html' %}
+{% block content %}
+<!--     
+    <div class="display_review">
+        <br>
+        <h4 class="customer">Name : name</h4>
+        <h4 class="customer" >contact no. : 368483498398</h4>
+        <p class="customer_review">
+            Lorem ipsum dolor sit amet consectetur <br>
+            adipisicing elit. Nesciunt porro, <br>
+            totam magnam dicta ratione hic dolorem reiciendis <br>
+            autem odit excepturi in, voluptas omnis necessitatibus <br>
+            ducimus explicabo aperiam, ab id asperiores rem nihil? <br>
+            Aperiam fuga cupiditate nesciunt blanditiis ullam <br>
+            necessitatibus praesentium! <br>
+        </p>
+        <form action="" method="post">
+            <input type="hidden" name="customer_id" value="customer id" >
+            <button type="submit" class="form_button" >remove</button>
+        </form>
+    </div> -->
+    {% for feedback in feedbacks  %}
+<div class="display_review">
+    <br>
+    <h4 class="customer">Name : {{ feedback.name }}</h4>
+    <h4 class="customer">contact no. : {{ feedback.contact }}</h4>
+    <p class="customer_review">
+        {{ feedback.client_feedback }}
+    </p>
+    <form action="delete_review" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="customer_id" value="{{feedback.name}}" >
+        <button type="submit" class="form_button" >remove</button>
+    </form>
+</div>
+{% endfor %}
+    {% endblock %}

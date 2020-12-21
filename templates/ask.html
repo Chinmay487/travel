@@ -1,0 +1,31 @@
+{% extends 'base1.html' %}
+{% block content %}
+
+    <br><br><br>
+    <h3 class="form_message" >
+        Please fill this form , Our team will contact soon. :)
+    </h3>
+
+    <div class="form_block" >
+        <form action="submit_query" method="post" class="ask_form">
+            {% csrf_token %}
+            <label class="form_label" for="name">Your name : </label>
+        <input class="form_input" type="text" name="name" id="name" placeholder="your name">
+        <label class="form_label" for="email">Email</label>
+        <input  class="form_input" type="email" name="email" id="email" placeholder="something@somewhere.com">
+        <label class="form_label" for="city">Your City : </label>
+        <input class="form_input" type="text" name="city" id="city" placeholder="city name">
+        <label class="form_label" for="contact">Your contact no.</label>
+        <input class="form_input" type="text" name="contact" id="contact" placeholder="contact number">
+        <select class="form_input" name="destination" id="destination">
+            <option value="#" selected>select your destination ..</option>
+            {% for d in dest %}
+            <option value="{{d.name}}"> {{d.name}} </option>
+            {% endfor %}
+        </select>
+        
+        <button type="submit" class="form_button" >Submit</button>
+    </form>
+        </form>
+    </div>
+{% endblock %}

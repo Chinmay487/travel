@@ -1,0 +1,31 @@
+{% extends 'base2.html' %}
+{% block content %}
+    <div class="table_container" >
+        <h3 class="table_result_hint" >customer queries</h3>
+        <table  class="table" >
+            <tr class="table_row" >
+                <th class="table_heading" >Name</th>
+                <th class="table_heading" >Email</th>
+                <th class="table_heading" >contact No.</th>
+                <th class="table_heading" >City</th>
+                <th class="table_heading" >Destination</th>
+            </tr>
+            <tr class="table_row" >
+                <td class="table_row_data" >Something</td>
+                <td class="table_row_data" >something@somewhere.com</td>
+                <td class="table_row_data" >987654321</td>
+                <td class="table_row_data" >City name</td>
+                <td class="table_row_data" >dest name</td>
+            </tr>
+            {% for q in query %}
+            <tr class="table_row" >
+                <td class="table_row_data" >{{q.name}}</td>
+                <td class="table_row_data" >{{q.email}}</td>
+                <td class="table_row_data" >{{q.contact}}</td>
+                <td class="table_row_data" >{{q.city}}</td>
+                <td class="table_row_data" >{{q.destination}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

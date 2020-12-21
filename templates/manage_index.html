@@ -1,0 +1,51 @@
+{% extends 'base2.html' %}
+
+{% block content %}
+    <!-- <div class="display_dest" >
+        <img class="dest_img" src=" /static/images/pexels-photo-1002272.jpeg" alt="" height="200em" >
+        <br>
+        <h4 class="dest_name" >Mumbai</h4>
+        
+        <pre class="dest_description" >
+            Lorem ipsum dolor sit amet consectetur 
+            adipisicing elit. Nesciunt porro,
+            totam magnam dicta ratione hic dolorem reiciendis 
+            autem odit excepturi in, voluptas omnis necessitatibus  
+            ducimus explicabo aperiam, ab id asperiores rem nihil? 
+            Aperiam fuga cupiditate nesciunt blanditiis ullam 
+            necessitatibus praesentium! 
+        </pre>
+        <h3 class="dest_price" >
+            price : 300$
+        </h3>
+        <h5 class="dest_link_head" >
+            <form action="" method="post">
+                <input type="hidden" name="destId" value="id of destination">
+                <button type="submit" class="form_button" >Delete</button>
+            </form>
+        </h5>
+    </div> -->
+
+    {% for d in dest %}
+    <div class="display_dest" >
+        <img class="dest_img" src="{{ d.image.url }}" alt="" height="200em" >
+        <br>
+        <h4 class="dest_name" >{{ d.name }}</h4>
+        
+        <p class="dest_description" >
+            {{d.description}}
+        </p>
+        <h3 class="dest_price" >
+            price : {{d.price}}$
+        </h3>
+        <h5 class="dest_link_head" >
+            <form action="delete_data" method="post">
+                {% csrf_token %}
+                <input type="hidden" name="destId" value="{{d.id}}">
+                <button type="submit" class="form_button" >Delete</button>
+            </form>
+        </h5>
+    </div>
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,26 @@
+.nav{
+    background-color: rgb(237, 238, 240);
+    position: fixed;
+    width: 100%;
+    margin: 0px;
+}
+
+.nav_link{
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(23, 184, 103);
+}
+
+.nav_link:hover{
+    font-size: 23px;
+    color: darkslateblue;
+}
+
+.nav_list_item{
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+

@@ -1,0 +1,19 @@
+{% extends 'base1.html' %}
+{% block content %}
+<div class="form_block" >
+    <form action="submit_feedback" method="post" class="form_feedback">
+        {% csrf_token %}
+        <label class="form_label" for="name">Your name : </label>
+        <input class="form_input" type="text" name="name" id="name" placeholder="your name">
+        <label class="form_label" for="email">Email</label>
+        <input  class="form_input" type="email" name="email" id="email" placeholder="something@somewhere.com">
+        <label class="form_label" for="contact">Your contact no.</label>
+        <input class="form_input" type="text" name="contact" id="contact" placeholder="contact number">
+        <label class="form_label" for="city">Your City : </label>
+        <input class="form_input" type="text" name="city" id="city" placeholder="city name">
+        <label class="form_label" for="feedback">your experience : </label>
+        <textarea class="form_input" name="feedback" id="feedback" cols="30" rows="10"></textarea>
+        <button type="submit" class="form_button" >Submit</button>
+    </form>
+</div>
+{% endblock %}

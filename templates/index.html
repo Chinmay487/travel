@@ -1,0 +1,48 @@
+{% extends 'base1.html' %}
+    
+{% block content %}
+    <!-- <div class="display_dest" >
+        <img class="dest_img" src="./static/images/pexels-photo-1002272.jpeg" alt="" height="200em" >
+        <br>
+        <h4 class="dest_name" >Mumbai</h4>
+        
+        <p class="dest_description" >
+            Lorem ipsum dolor sit amet consectetur <br> 
+            adipisicing elit. Nesciunt porro, <br>
+            totam magnam dicta ratione hic dolorem reiciendis <br> 
+            autem odit excepturi in, voluptas omnis necessitatibus <br> 
+            ducimus explicabo aperiam, ab id asperiores rem nihil? <br>
+            Aperiam fuga cupiditate nesciunt blanditiis ullam <br>
+            necessitatibus praesentium! <br>
+        </p>
+        <h3 class="dest_price" >
+            price : 300$
+        </h3>
+        <h5 class="dest_link_head" >
+            <a class="dest_link" href="ask">
+                Ask
+            </a>
+        </h5>
+    </div> -->
+
+    {% for d in dest %}
+    <div class="display_dest" >
+        <img class="dest_img" src="{{d.image.url}}" alt="" height="200em" >
+        <br>
+        <h4 class="dest_name" >{{d.name}}</h4>
+        
+        <p class="dest_description" >
+            {{ d.description }}
+        </p>
+        <h3 class="dest_price" >
+            price : {{d.price}}$
+        </h3>
+        <h5 class="dest_link_head" >
+            <a class="dest_link" href="ask">
+                Ask
+            </a>
+        </h5>
+    </div>
+    {% endfor %}
+
+{% endblock %}

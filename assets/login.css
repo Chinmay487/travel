@@ -1,0 +1,46 @@
+body{
+    text-align: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    
+}
+
+.form_block{
+    margin-left: 25em;
+    margin-right: 25em;
+    margin-top: 7em;
+    margin-bottom: 2em;
+    border: 4px solid blanchedalmond;
+}
+
+
+.form_login{
+    padding: 7em;
+    margin: 30px;
+}
+
+.form_label{
+    font-size: 2em;
+    font-family: cursive;
+    
+}
+
+
+.form_input{
+    font-size: 2em;
+    display: block;
+    margin: 20px;
+    outline: rebeccapurple;
+}
+
+.form_button{
+    border-radius: 10px;
+    font-size: 30px;
+    background-color: white;
+    color: teal;
+}
+
+.form_button:hover{
+    background-color: coral;
+    color: cornsilk;
+}

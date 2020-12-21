@@ -1,0 +1,17 @@
+{% extends 'base2.html' %}
+{% block content %}
+    <div class="form_block" >
+        <form class="form_add" action="add_new_dest" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label class="form_label" for="dest_name">Destination Name</label>
+            <input class="form_input" type="text" name="dest_name" id="dest_name" placeholder="Name">
+            <label class="form_label" for="dest_price">Price</label>
+            <input class="form_input" type="number" name="dest_price" id="dest_price">
+            <label class="form_label" for="dest_discription">description</label>
+            <textarea class="form_input" name="dest_description" id="dest_description" cols="30" rows="10"></textarea>
+            <label class="form_label" for="destImg">Upload image : </label>
+            <input class="form_input" type="file" name="destImg" id="destImg" >
+            <button type="submit" class="form_button" >Add</button>
+        </form>
+    </div>
+{% endblock %}
